@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEngine;
-
-public class move : MonoBehaviour
+public class Move : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float maxTiltAngle = 30f; // Maximum tilt angle in degrees
@@ -33,5 +31,16 @@ public class move : MonoBehaviour
         Vector3 eulerRotation = cylinderTransform.rotation.eulerAngles;
         eulerRotation.z = Mathf.Clamp(eulerRotation.z, -maxTiltAngle, maxTiltAngle);
         cylinderTransform.rotation = Quaternion.Euler(eulerRotation);
+    }
+
+    // This function is called when the player collides with a trigger collider
+    private void OnTriggerEnter(Collider other)
+    {
+        // If the player collided with a piece of trash
+        if (other.gameObject.CompareTag("Trash"))
+        {
+            // Destroy the piece of trash
+            Destroy(other.gameObject);
+        }
     }
 }
