@@ -248,8 +248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8dcbd03c9a80f24e84f4937d00956d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 50
-  maxTiltAngle: 30
+  objectSpeed: 0
+  characterSpeed: 10
 --- !u!75 &590282177
 ConstantForce:
   m_ObjectHideFlags: 0
@@ -258,7 +258,7 @@ ConstantForce:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590282171}
   m_Enabled: 1
-  m_Force: {x: 5, y: 0, z: 0}
+  m_Force: {x: 0, y: 0, z: 0}
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
