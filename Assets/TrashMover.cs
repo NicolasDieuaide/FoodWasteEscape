@@ -2,19 +2,25 @@ using UnityEngine;
 
 public class TrashMover : MonoBehaviour
 {
-    public float speed = 5.0f;
-    public GameObject player; // Reference to the player
+    public float speed = 5.0f;  // Speed of the trash
+    public float endZPosition = 19.52337f; // Z position of the end of the plane
 
     // Update is called once per frame
     void Update()
     {
-        // Calculate the direction from the trash to the player
-        Vector3 direction = (player.transform.position - transform.position).normalized;
+        // Move the trash along the Z-axis
+        Vector3 movement = new Vector3(1, 0, 0);
+        transform.Translate(movement * speed * Time.deltaTime);
 
-        // Set the y component of the direction to 0 to only move horizontally
-        direction.y = 0;
-
-        // Move the trash in the direction of the player
-        transform.Translate(direction * speed * Time.deltaTime);
+        // Check if the trash has reached the end of the plane
+        if (transform.position.z <= endZPosition)
+        {
+            // Destroy the trash if it's a clone
+            if (gameObject.name.Contains("(Clone)"))
+            {
+                Destroy(gameObject);
+            }
+        }
     }
+
 }
