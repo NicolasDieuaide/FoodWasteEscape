@@ -2,39 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move : MonoBehaviour
+public class ObjectMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float maxTiltAngle = 30f; // Maximum tilt angle in degrees
+    public float objectSpeed = 5f;
+    public float characterSpeed = 10f;
 
-    private Transform cylinderTransform;
-    private Quaternion initialRotation;
+    private Rigidbody rb;
 
     private void Start()
     {
-        cylinderTransform = GetComponent<Transform>();
-        initialRotation = cylinderTransform.rotation;
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
+        // Move the object along the Z axis
+        transform.Translate(Vector3.right * objectSpeed * Time.deltaTime);
 
-        Vector3 movement = new Vector3(moveHorizontal, 0f, 0f);
-
-        cylinderTransform.Translate(movement * moveSpeed * Time.deltaTime);
-
-        // Reset cylinder rotation
-        cylinderTransform.rotation = initialRotation;
-
-        // Prevent tilting
-        Vector3 eulerRotation = cylinderTransform.rotation.eulerAngles;
-        eulerRotation.z = Mathf.Clamp(eulerRotation.z, -maxTiltAngle, maxTiltAngle);
-        cylinderTransform.rotation = Quaternion.Euler(eulerRotation);
+        // Move the character along the X axis
+        float moveX = Input.GetAxis("Horizontal") * characterSpeed * Time.deltaTime;
+        transform.Translate(Vector3.forward * moveX);
     }
 
-    // This function is called when the player collides with a trigger collider
-    private void OnTriggerEnter(Collider other)
+
+
+// This function is called when the player collides with a trigger collider
+public void OnTriggerEnter(Collider other)
     {
         // If the player collided with a piece of trash
         if (other.gameObject.CompareTag("Trash"))
@@ -44,3 +37,4 @@ public class Move : MonoBehaviour
         }
     }
 }
+
