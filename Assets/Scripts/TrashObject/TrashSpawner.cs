@@ -22,11 +22,26 @@ public class TrashSpawner : MonoBehaviour
             // Instantiate trash at a random z-position
             float randomZ = Random.Range(minZPosition, maxZPosition);
             Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y, randomZ);
-            Instantiate(trashPrefab, spawnPosition, Quaternion.identity);
+            GameObject clone = Instantiate(trashPrefab, spawnPosition, Quaternion.identity);
+
+            // Enable the Mesh Renderer of the cloned trash object to make it visible
+            MeshRenderer renderer = clone.GetComponent<MeshRenderer>();
+            if (renderer != null)
+            {
+                renderer.enabled = true;
+            }
+
+            // Enable the TrashMover script of the cloned trash object to make it move
+            TrashMover trashMover = clone.GetComponent<TrashMover>();
+            if (trashMover != null)
+            {
+                trashMover.enabled = true;
+            }
 
             // Wait for a random time interval before spawning the next trash
             float randomInterval = Random.Range(minSpawnInterval, maxSpawnInterval);
             yield return new WaitForSeconds(randomInterval);
         }
     }
+
 }

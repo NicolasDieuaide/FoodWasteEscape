@@ -26,12 +26,15 @@ public class ObjectMovement : MonoBehaviour
 
     // This function is called when the player collides with a trigger collider
     public void OnTriggerEnter(Collider other)
-    {   
+    {
         // If the player collided with a piece of trash that is a clone
         if (other.gameObject.name.Contains("Trash") && other.gameObject.name.Contains("(Clone)"))
         {
             // Destroy the piece of trash
             Destroy(other.gameObject);
+
+            // Increase score by 1
+            ScoreManager.instance.IncreaseScore(1);
         }
     }
 }
