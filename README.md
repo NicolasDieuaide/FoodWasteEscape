@@ -13,12 +13,6 @@ Die dynamische Spielwelt präsentiert verschiedene Schauplätze, wie etwa städt
 Food Waste Escape verbindet nicht nur Spass und Lernen, sondern bietet auch eine Plattform, um das Bewusstsein für die Bedeutung der Reduzierung von Lebensmittelabfällen und den effizienten Umgang mit Ressourcen zu schärfen. Das Spiel enthält zudem informative Elemente, die den Spielern praktische Tipps und Informationen zur Vermeidung von Lebensmittelverschwendung im Alltag vermitteln.
 Dank der Verwendung der C#-Programmiersprache und der Unity-Game-Engine bietet Food Waste Escape ein reibungsloses und ansprechendes Spielerlebnis auf verschiedenen Plattformen, wobei der PC als Hauptplattform im Fokus steht.
 
-### Projektvorschau
-![food-waste-escape.jpg](/.attachments/food-waste-escape-d5fdc507-8e71-4f4c-b05a-60eb5d6ef630.jpg)
-
-Das ist eine kurze skizze wie das spiel aussheen könnte. In dieser version muss man den müll aufsammeln und darf nicht den müll vorbeilassen.
-
-
 ## Anforderungskatalog:
 - [ ] **User Story 1 (Priorität: hoch)** Als Spieler möchte ich durch ein Level laufen (Infinite run) und verschiedene Abfall Säcke einsammeln
 - [ ] **User Story 2 (Priorität: mittel)** Als Spieler möchte ich 3 Leben haben, um nicht gleich bei jedem Fehler neu starten zu müssen.
