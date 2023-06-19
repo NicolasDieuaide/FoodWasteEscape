@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectMovement : MonoBehaviour
 {
     public float objectSpeed = 5f;
     public float characterSpeed = 10f;
-
     private Rigidbody rb;
 
     private void Start()
@@ -33,7 +30,7 @@ public class ObjectMovement : MonoBehaviour
             // Destroy the piece of trash
             Destroy(other.gameObject);
 
-            // Increase score by 1
+            // Add to the score
             ScoreManager.instance.IncreaseScore(1);
         }
     }
