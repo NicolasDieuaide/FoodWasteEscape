@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager instance; // Singleton for the ScoreManager
+    public static ScoreManager instance; 
 
-    public int score; // The current score
+    public int score; 
+    public int health; 
 
-    void Awake()
+    private void Awake()
     {
-        // Singleton setup
+        health = 100;
+
         if (instance == null)
         {
             instance = this;
@@ -16,14 +18,24 @@ public class ScoreManager : MonoBehaviour
         else if (instance != this)
         {
             Destroy(gameObject);
+            return;
         }
 
-        // Keep the ScoreManager across scenes
         DontDestroyOnLoad(gameObject);
     }
 
     public void IncreaseScore(int amount)
     {
         score += amount;
+    }
+
+    public void DecreaseHealth(int amount)
+    {
+        health -= 1;
+
+        if (health <= 0)
+        {
+            // Add game over logic here
+        }
     }
 }

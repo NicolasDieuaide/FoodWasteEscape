@@ -1,13 +1,13 @@
 using UnityEngine;
-using TMPro; // Add this
+using TMPro;
 
 public class ScoreDisplay : MonoBehaviour
 {
-    private TextMeshProUGUI scoreText;  // Replace Text with TextMeshProUGUI
+    private TextMeshProUGUI scoreText;
 
     private void Start()
     {
-        scoreText = GetComponent<TextMeshProUGUI>(); // Replace Text with TextMeshProUGUI
+        scoreText = GetComponent<TextMeshProUGUI>();
 
         if (scoreText == null)
         {
