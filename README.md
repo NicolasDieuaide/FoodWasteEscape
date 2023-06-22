@@ -32,14 +32,9 @@ Dank der Verwendung der C#-Programmiersprache und der Unity-Game-Engine bietet F
 "Food Waste Escape" ist ein 2D-Spiel, das auf der Unity-Spiele-Engine basiert und in C# entwickelt wird. Die Grafiken werden mit "Paint" erstellt und in Unity importiert. Für Projektmanagement und Zusammenarbeit wird Microsoft Azure DevOps verwendet und das Projekt wird auf GitHub gespeichert. Das Spiel bietet ein unterhaltsames Spielerlebnis, bei dem der Spieler als Läufer gegen die Verschwendung von Lebensmitteln kämpft.
 
 
+
 ## Team:
 Noah Zysset, Levin Schaad, Ilay Bicer, Nicolas Dieuaide
 
 ## Statusbericht:
-[Statusbericht](/Food-Waste-Escape-Wiki/Statusbericht)
-
-## Gitflow:
-[Gitflow](/Food-Waste-Escape-Wiki/Gitflow)
-
-## Pull Request:
-[Pull Request](/Food-Waste-Escape-Wiki/Pull-Request)
+[Statusbericht](/Statusbericht)
